@@ -17,6 +17,10 @@ def get_formatted_name(person):
     return f"{person.get('name')}, {person.get('description')} from {person.get('country')}"
 
 
+def get_formatted_follower_count(person):
+    return f"{person.get('name')} has {person.get('follower_count')}"
+
+
 def game_core():
     """
     main function of the game
@@ -30,8 +34,8 @@ def game_core():
         print(f"Option B: {get_formatted_name(person2)}")
         option = input("Insert the one you think is the highest: \n").lower()
 
-        print(f"{person1.get('name')} has {person1.get('follower_count')}")
-        print(f"{person2.get('name')} has {person2.get('follower_count')}")
+        print(get_formatted_follower_count(person1))
+        print(get_formatted_follower_count(person2))
         if option == "a" and person1.get('follower_count') > person2.get('follower_count'):
             print("You win!")
             person1 = person2
