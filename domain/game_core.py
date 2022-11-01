@@ -26,10 +26,18 @@ def game_core():
     main function of the game
     :return: None
     """
+
     person1 = pick_person()
     person2 = pick_person()
-    points = 0
     while True:
+        if person1 == person2:
+            person2 = pick_person()
+        else:
+            break
+
+    points = 0
+    should_continue = True
+    while should_continue:
         print(f"Option A: {get_formatted_name(person1)}")
         print(f"Option B: {get_formatted_name(person2)}")
         option = input("Insert the one you think is the highest: \n").lower()
@@ -47,6 +55,7 @@ def game_core():
             person2 = pick_person()
             points += 1
         else:
+            should_continue = False
             print("You lose")
-            print(f"You got {points}")
-            break
+
+        print(f"You got {points}")
