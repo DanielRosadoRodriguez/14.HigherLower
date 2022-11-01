@@ -13,6 +13,10 @@ def pick_person():
     return person_picked
 
 
+def get_formatted_name(person):
+    return f"{person.get('name')}, {person.get('description')} from {person.get('country')}"
+
+
 def game_core():
     """
     main function of the game
@@ -22,8 +26,8 @@ def game_core():
     person2 = pick_person()
     points = 0
     while True:
-        print(f"Option A: {person1.get('name')}, {person1.get('description')} from {person1.get('country')}")
-        print(f"Option B: {person2.get('name')}, {person2.get('description')} from {person2.get('country')}")
+        print(f"Option A: {get_formatted_name(person1)}")
+        print(f"Option B: {get_formatted_name(person2)}")
         option = input("Insert the one you think is the highest: \n").lower()
 
         print(f"{person1.get('name')} has {person1.get('follower_count')}")
