@@ -10,5 +10,9 @@ logo = '''
 `--' `--'  `--'     `------'  `--' `--' `------'`--' '--' `------'      `-----' '--'   '--'   `------'`--' '--' 
 '''
 
+
 def print_wellcome():
     print(logo)
+    print("Wellcome to Higher or Lower!")
+    print("You have to pick the account that has more followers on instabram")
+    print("If you chose wrong, you lose")
